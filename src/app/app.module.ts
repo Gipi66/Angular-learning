@@ -6,7 +6,12 @@ import { HeroesComponent } from './heroes/heroes.component';
 import {FormsModule} from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
+import {RouterModule, Routes} from '@angular/router';
+
+const routes: Routes = [
+  {path: 'heroes', component: HeroesComponent}
+];
 
 @NgModule({
   declarations: [
@@ -16,6 +21,7 @@ import { AppRoutingModule } from './/app-routing.module';
     MessagesComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
     AppRoutingModule

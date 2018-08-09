@@ -1,0 +1,5 @@
+ng generate module app-routing --flat --module=app
+https://angular.io/tutorial/toh-pt5
+
+ng generate component heroes
+https://angular.io/tutorial/toh-pt1
