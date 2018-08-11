@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Hero} from './Hero';
 import {Observable, of} from 'rxjs';
 import {MessageService} from './message.service';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {catchError, tap} from 'rxjs/operators';
 
 @Injectable({
@@ -14,6 +14,10 @@ export class HeroService {
     private http: HttpClient,
     private messageService: MessageService) {
   }
+
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+  };
 
   private heroesUrl = 'api/heroes';
 
@@ -43,5 +47,20 @@ export class HeroService {
       this.log(`${opearation} failed: ${error.message}`);
       return of(result as T);
     };
+  }
+
+  updateHero(hero: Hero): Observable<any> {
+    return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap(_ => this.log(`updated hero id=${hero.id}`)),
+      catchError(this.handleError<any>(`updateHero`))
+    );
+  }
+
+  addHero(hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions)
+      .pipe(
+        tap((h: Hero) => this.log(`added hero w/ id=${h.id}`)),
+        catchError(this.handleError<Hero>(`addHero`))
+      );
   }
 }
