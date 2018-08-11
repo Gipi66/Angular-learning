@@ -9,6 +9,9 @@ import {MessagesComponent} from './messages/messages.component';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './in-memory-data.service';
 
 const routes: Routes = [
   {path: 'heroes', component: HeroesComponent}
@@ -23,11 +26,14 @@ const routes: Routes = [
     DashboardComponent
   ],
   imports: [
-    // RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {dataEncapsulation: false}
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
