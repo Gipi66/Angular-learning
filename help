@@ -1,0 +1,7 @@
+npm install bootstrap font-awesome
+
+ng generate module ui --module app.module
+
+ng generate component ui/layout
+ng generate component ui/header
+ng generate component ui/footer
