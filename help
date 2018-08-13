@@ -1,8 +1,18 @@
+# Init
+npm install -g @angular/cli
+ng new my-app
+
+# Run project
+ng serve --open
+
+# Generate module https://angular.io/tutorial/toh-pt5
 ng generate module app-routing --flat --module=app
-https://angular.io/tutorial/toh-pt5
 
+# Generate service inside module
+ng g s backendApi -m app.module
+
+# Generate component https://angular.io/tutorial/toh-pt1
 ng generate component heroes
-https://angular.io/tutorial/toh-pt1
 
-In-memory Web API module
+# In-memory Web API module
 npm install angular-in-memory-web-api --save
