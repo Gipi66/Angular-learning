@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-learning": {
+    "tutorial-angular-cli-v6-styling-bootstrap": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-learning",
+            "outputPath": "dist/tutorial-angular-cli-v6-styling-bootstrap",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-learning:build"
+            "browserTarget": "tutorial-angular-cli-v6-styling-bootstrap:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-learning:build:production"
+              "browserTarget": "tutorial-angular-cli-v6-styling-bootstrap:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-learning:build"
+            "browserTarget": "tutorial-angular-cli-v6-styling-bootstrap:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "angular-learning-e2e": {
+    "tutorial-angular-cli-v6-styling-bootstrap-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-learning:serve"
+            "devServerTarget": "tutorial-angular-cli-v6-styling-bootstrap:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-learning:serve:production"
+              "devServerTarget": "tutorial-angular-cli-v6-styling-bootstrap:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "angular-learning"
+  "defaultProject": "tutorial-angular-cli-v6-styling-bootstrap"
 }
